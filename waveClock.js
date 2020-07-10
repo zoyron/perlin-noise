@@ -2,13 +2,13 @@ let angleNoise, radiusNoise;
 let xNoise, yNoise;
 let angle = -90;
 let radius = 0;
-let strokeCol = 0;
-let strokeChange = 1;
+let strokeCol = 255;
+let strokeChange = -1;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   // frameRate(30);
-  background("#e3e3e3");
+  background("#dadada");
   noFill();
   // angleMode(DEGREES);
   angleNoise = random(10);
@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
   translate(width / 2, height / 2);
-  for (let i = 1; i <= 2; i++) {
+  for (let i = 1; i <= 4; i++) {
     radiusNoise += 0.005;
     radius = noise(radiusNoise) * 550 + 1;
     angleNoise += 0.005;
@@ -37,9 +37,9 @@ function draw() {
     let x2 = centreX + radius * cos(opprad);
     let y2 = centreY + radius * sin(opprad);
     strokeCol += strokeChange;
-    if (strokeCol > 254) strokeChange = -1;
-    if (strokeCol < 0) strokeChange = 1;
-    stroke(strokeCol, 75);
+    if (strokeCol > 255) strokeChange = -1;
+    if (strokeCol < 100) strokeChange = 1;
+    stroke(strokeCol - 23, strokeCol - 111, strokeCol - 99, 40);
     strokeWeight(4);
     line(x1, y1, x2, y2);
   }
