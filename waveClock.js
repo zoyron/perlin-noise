@@ -8,7 +8,7 @@ let strokeChange = 1;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   // frameRate(30);
-  background(255);
+  background("#e3e3e3");
   noFill();
   // angleMode(DEGREES);
   angleNoise = random(10);
@@ -39,8 +39,8 @@ function draw() {
     strokeCol += strokeChange;
     if (strokeCol > 254) strokeChange = -1;
     if (strokeCol < 0) strokeChange = 1;
-    stroke(strokeCol, 60);
-    strokeWeight(2);
+    stroke(strokeCol, 75);
+    strokeWeight(4);
     line(x1, y1, x2, y2);
   }
 }
