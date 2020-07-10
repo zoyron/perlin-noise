@@ -19,7 +19,7 @@ function setup() {
 
 function draw() {
   translate(width / 2, height / 2);
-  for (let i = 1; i <= 4; i++) {
+  for (let i = 1; i <= 5; i++) {
     radiusNoise += 0.005;
     radius = noise(radiusNoise) * 450 + 1;
     angleNoise += 0.005;
